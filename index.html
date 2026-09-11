@@ -137,12 +137,13 @@
     }
 
     .controls {
-      width: min(100%, 720px);
+      width: min(100%, 380px);
 
       margin: 0 auto;
 
       display: flex;
       align-items: stretch;
+      justify-content: center;
 
       gap: 12px;
     }
@@ -150,6 +151,7 @@
     #seedInput {
       flex: 1;
       min-width: 0;
+      max-width: 280px;
 
       height: 54px;
 
@@ -167,10 +169,10 @@
       color: white;
 
       font-family: monospace;
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 700;
 
-      letter-spacing: 3px;
+      letter-spacing: 4px;
 
       text-align: center;
     }
@@ -206,12 +208,18 @@
     }
 
     #generateButton span {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
 
       font-size: 30px;
       line-height: 1;
 
-      transform: translateY(-1px);
+      position: relative;
+      top: -3px;
     }
 
     @media (orientation: landscape) {
