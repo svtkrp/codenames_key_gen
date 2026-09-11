@@ -30,11 +30,6 @@
       color: white;
     }
 
-    /*
-      Сам ключ занимает ровно один экран.
-      В горизонтальной ориентации карточки
-      автоматически становятся широкими.
-    */
     .board {
       width: 100vw;
 
@@ -46,13 +41,13 @@
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(5, 1fr);
 
-      gap: 6px;
+      gap: 10px;
 
       padding:
-        max(6px, env(safe-area-inset-top))
-        max(6px, env(safe-area-inset-right))
-        max(6px, env(safe-area-inset-bottom))
-        max(6px, env(safe-area-inset-left));
+        max(10px, env(safe-area-inset-top))
+        max(10px, env(safe-area-inset-right))
+        max(10px, env(safe-area-inset-bottom))
+        max(10px, env(safe-area-inset-left));
 
       background:
         linear-gradient(
@@ -70,14 +65,15 @@
       align-items: center;
       justify-content: center;
 
-      border-radius: 10px;
+      border-radius: 14px;
 
       overflow: hidden;
       user-select: none;
 
       box-shadow:
-        inset 0 1px 1px rgba(255,255,255,0.13),
-        inset 0 -2px 5px rgba(0,0,0,0.15);
+        inset 0 2px 2px rgba(255,255,255,0.14),
+        inset 0 -3px 7px rgba(0,0,0,0.16),
+        0 3px 8px rgba(0,0,0,0.16);
     }
 
     .card.red {
@@ -117,82 +113,78 @@
     }
 
     .emoji {
-      font-size: 9px;
+      font-size: 26px;
       line-height: 1;
 
       pointer-events: none;
 
       filter:
         drop-shadow(
-          0 1px 1px rgba(0, 0, 0, 0.35)
+          0 2px 2px rgba(0, 0, 0, 0.35)
         );
     }
 
-    /*
-      Управление находится уже после первого экрана.
-      Чтобы поменять seed, нужно прокрутить вниз.
-    */
     .controls-wrap {
       width: 100%;
 
       padding:
-        18px
-        max(14px, env(safe-area-inset-right))
-        calc(18px + env(safe-area-inset-bottom))
-        max(14px, env(safe-area-inset-left));
+        24px
+        max(18px, env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        max(18px, env(safe-area-inset-left));
 
       background: #101218;
     }
 
     .controls {
-      width: min(100%, 620px);
+      width: min(100%, 720px);
 
       margin: 0 auto;
 
       display: flex;
       align-items: stretch;
 
-      gap: 8px;
+      gap: 12px;
     }
 
     #seedInput {
       flex: 1;
       min-width: 0;
 
-      height: 44px;
+      height: 54px;
 
-      padding: 0 14px;
+      padding: 0 18px;
 
       border:
-        1px solid rgba(255,255,255,0.14);
+        1px solid rgba(255,255,255,0.16);
 
-      border-radius: 11px;
+      border-radius: 14px;
       outline: none;
 
       background:
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,0.09);
 
       color: white;
 
       font-family: monospace;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
 
-      letter-spacing: 2px;
+      letter-spacing: 3px;
 
       text-align: center;
     }
 
     #seedInput:focus {
       border-color:
-        rgba(255,255,255,0.4);
+        rgba(255,255,255,0.45);
     }
 
     #generateButton {
-      width: 52px;
-      height: 44px;
+      width: 64px;
+      height: 54px;
 
-      flex: 0 0 52px;
+      flex: 0 0 64px;
 
       padding: 0;
 
@@ -201,7 +193,7 @@
       justify-content: center;
 
       border: 0;
-      border-radius: 11px;
+      border-radius: 14px;
 
       background: white;
       color: #151820;
@@ -216,27 +208,23 @@
     #generateButton span {
       display: block;
 
-      font-size: 22px;
+      font-size: 30px;
       line-height: 1;
 
       transform: translateY(-1px);
     }
 
-    /*
-      В портретной ориентации всё тоже работает,
-      но основной дизайн рассчитан на landscape.
-    */
     @media (orientation: landscape) {
       .board {
-        gap: 5px;
+        gap: 9px;
       }
 
       .card {
-        border-radius: 9px;
+        border-radius: 13px;
       }
 
       .emoji {
-        font-size: 8px;
+        font-size: 28px;
       }
     }
   </style>
